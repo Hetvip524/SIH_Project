@@ -1,0 +1,98 @@
+.publication-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.publication-title {
+  text-align: center;
+  color: #2d3748;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.publication-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.publication-item {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+}
+
+.publication-item-title {
+  color: #1a202c;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.publication-faculty-name {
+  color: #4a5568;
+  font-size: 0.95rem;
+  margin-bottom: 1.2rem;
+  font-weight: 400;
+}
+
+/* Button Base Styles */
+.download-button,
+.accept-button,
+.reject-button {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  margin-right: 0.8rem;
+}
+
+.download-button {
+  background: #4299e1;
+  color: white;
+}
+
+.accept-button {
+  background: #48bb78;
+  color: white;
+}
+
+.reject-button {
+  background: #f56565;
+  color: white;
+}
+
+/* Hover Effects */
+.download-button:hover { background: #3182ce; }
+.accept-button:hover { background: #38a169; }
+.reject-button:hover { background: #e53e3e; }
+
+/* Mobile Responsive */
+@media (max-width: 640px) {
+  .publication-container {
+      padding: 1rem;
+  }
+  
+  .publication-item {
+      padding: 1.2rem;
+  }
+  
+  .download-button,
+  .accept-button,
+  .reject-button {
+      display: block;
+      width: 100%;
+      margin-bottom: 0.5rem;
+  }
+  
+  button:last-child {
+      margin-bottom: 0;
+  }
+}

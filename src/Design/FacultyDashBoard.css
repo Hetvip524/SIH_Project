@@ -1,0 +1,211 @@
+ /* Dashboard Container */
+  .dashboard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, #f0f4ff, #e8eaf6);
+    padding: 2rem;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Animated Background Elements */
+  .dashboard-container::before,
+  .dashboard-container::after {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(45deg, #6366f155, #a855f755);
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: 0;
+  }
+  
+  .dashboard-container::before {
+    top: -100px;
+    left: -100px;
+  }
+  
+  .dashboard-container::after {
+    bottom: -100px;
+    right: -100px;
+  }
+  
+  /* Profile Section */
+  .profile-section {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(145deg, #4f46e5, #9333ea);
+    border-radius: 20px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .profile-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+    transform: rotate(45deg);
+    animation: shine 6s infinite;
+  }
+  
+  @keyframes shine {
+    0% { transform: rotate(45deg) translateX(-200%); }
+    100% { transform: rotate(45deg) translateX(200%); }
+  }
+  
+  .profile-photo {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 4px solid rgba(255,255,255,0.2);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(0.1);
+    transition: filter 0.3s ease;
+  }
+  
+  .profile-photo:hover {
+    transform: scale(1.05);
+  }
+  
+  .profile-photo:hover img {
+    filter: grayscale(0);
+  }
+  
+  .profile-details {
+    margin-left: 2rem;
+    color: white;
+  }
+  
+  .profile-details h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+  
+  .profile-details .shortname {
+    font-size: 1.2rem;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 0.5rem;
+  }
+  
+  .profile-details .email {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.8);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  /* Info Section */
+  .info-section {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2rem;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+  
+  .info-section h2 {
+    font-size: 1.5rem;
+    color: #1e293b;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.75rem;
+  }
+  
+  .info-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, #4f46e5, #9333ea);
+    border-radius: 2px;
+  }
+  
+  .profile-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .profile-info p {
+    font-size: 1rem;
+    color: #475569;
+    line-height: 1.6;
+    padding: 1rem;
+    background: rgba(255,255,255,0.6);
+    border-radius: 12px;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255,255,255,0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .profile-info p:hover {
+    background: rgba(255,255,255,0.8);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+  
+  .profile-info strong {
+    color: #1e293b;
+    font-weight: 600;
+    display: inline-block;
+    min-width: 120px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .profile-section {
+      flex-direction: column;
+      text-align: center;
+      padding: 1.5rem;
+    }
+  
+    .profile-details {
+      margin-left: 0;
+      margin-top: 1.5rem;
+    }
+  
+    .profile-info {
+      grid-template-columns: 1fr;
+    }
+  
+    .dashboard-container::before,
+    .dashboard-container::after {
+      display: none;
+    }
+  }
+  
+  /* Hover Effects */
+  .profile-info p:hover {
+    color: #4f46e5;
+  }
